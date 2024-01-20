@@ -1,0 +1,21 @@
+Name,Code,Description
+Page CTA Clicks,page_cta_clicks,The number of clicks on call-to-action (CTA) buttons on your Facebook Page.
+Page Engagement,page_engagement,The total number of engagements on your Facebook Page including clicks likes comments and shares.
+Page Impressions,page_impressions,The total number of times content from your Page is displayed including both organic and paid impressions.
+Page Posts,page_posts,The total number of posts made on your Facebook Page.
+Page Post Engagement,page_post_engagement,The total number of engagements on your individual Page posts including likes comments and shares.
+Negative Feedback Types,negative_feedback_types,The different types of negative feedback received on your Page such as hide post hide all posts report as spam etc.
+Page Post Impressions,page_post_impressions,The total number of times your individual Page posts are displayed including both organic and paid impressions.
+Page Reactions,page_reactions,The total number of reactions (like love wow haha sad angry) on your Facebook Page.
+Page Like Sources,page_like_sources,The sources from which people liked your Page including from Page suggestions ads and others.
+Page Unlike Sources,page_unlike_sources,The sources from which people unliked your Page.
+Page Video Views,page_video_views,The total number of views on videos posted on your Facebook Page.
+Page Views,page_views,The total number of times your Facebook Page has been viewed.
+Page Video Posts,page_video_posts,The total number of video posts made on your Facebook Page.
+Stories,stories,The total number of stories created by your Page.
+Page Story Types,page_story_types,The different types of stories created by your Page, such as photos videos and events.
+Video Ad Breaks,video_ad_breaks,The performance metrics related to video ad breaks on your Page including views and engagement.
+Page Fans,page_fans,The total number of people who have liked your Facebook Page.
+Page Follows,page_follows,The total number of people who have followed your Facebook Page.
+Page Views (Unique),page_views_unique,The total number of unique individuals who have viewed your Facebook Page.
+Page Negative Feedback,page_negative_feedback,The total number of times people have given negative feedback to your Facebook Page including hide post hide all posts report as spam etc.
