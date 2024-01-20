@@ -38,10 +38,8 @@
 </head>
 
 <body class="animsition">
-    <div class="page-wrapper">
-        <div class="page-content--bge5">
-            @yield('content')
-        </div>
+    <div class="page-wrapper p-0">
+        @yield('content')
     </div>
 
     <!-- Jquery JS-->

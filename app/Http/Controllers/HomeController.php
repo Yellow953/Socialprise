@@ -35,7 +35,6 @@ class HomeController extends Controller
         $business = Business::where('page_id', $request->page_id)->firstOrFail();
         $metrics = Metric::select('name', 'description')->get();
         $data = $this->get_analytics($business, $request->metrics)["data"];
-
         foreach ($data as $item) {
             Result::create([
                 "type" => "facebook",

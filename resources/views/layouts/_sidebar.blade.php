@@ -1,7 +1,7 @@
 <!-- MENU SIDEBAR-->
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
-        <a href="/">
+        <a href="{{ route('home') }}">
             <h2>Socialprise</h2>
         </a>
     </div>
@@ -9,7 +9,7 @@
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
                 <li class="{{(Route::current()->uri == '/') ? 'active' : '' }}">
-                    <a href="/" class="d-flex align-items-center">
+                    <a href="{{ route('home') }}" class="d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="mx-2 bi bi-speedometer" viewBox="0 0 16 16">
                             <path

@@ -14,3 +14,15 @@ td {
 th {
     background-color: #f2f2f2;
 }
+
+.logo{
+    background-color: #1371d7;
+}
+
+.header-desktop{
+    background: linear-gradient(to right, #1371d7, #5fa8e3);
+}
+
+.menu-sidebar__content{
+    background: linear-gradient(to bottom, #1371d7, #5fa8e3);
+}

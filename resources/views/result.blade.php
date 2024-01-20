@@ -144,7 +144,7 @@
         </div>
     </div>
 
-    <h3 class="my-4">Analysis</h3>
+    <h3 class="my-4">AI Analysis</h3>
     <div class="col-md-12">
         <div class="card">
             <div class="card-body card-block">
