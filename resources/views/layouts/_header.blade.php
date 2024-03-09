@@ -17,7 +17,7 @@
                                 <img src="{{asset('assets/images/default_profile.png')}}" />
                             </div>
                             <div class="content">
-                                <a class="js-acc-btn" href="/">{{auth()->user()->name}}</a>
+                                <a class="js-acc-btn" href="{{ route('home') }}">{{auth()->user()->name}}</a>
                             </div>
                             <div class="account-dropdown js-dropdown">
                                 <div class="info clearfix">

@@ -36,45 +36,33 @@ class MetricController extends Controller
 
         Metric::create($request->all());
 
-        return redirect('/metrics')->with('success', 'Metric successfully created!');
+        return redirect()->route('metrics')->with('success', 'Metric successfully created!');
     }
 
-    public function edit($id)
+    public function edit(Metric $metric)
     {
-        $metric = Metric::findOrFail($id);
-
-        if (!$metric) {
-            return redirect('/metrics')->with('danger', 'Metric not found!');
-        }
-
         return view('metrics.edit', compact('metric'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Metric $metric)
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'code' => ['required', 'string', 'max:255'],
         ]);
 
-        $metric = Metric::findOrFail($id);
-
-        if (!$metric) {
-            return redirect('/metrics')->with('danger', 'Metric not found!');
-        }
-
         $metric->update($request->all());
 
-        return redirect('/metrics')->with('warning', 'Metric successfully updated!');
+        return redirect()->route('metrics')->with('warning', 'Metric successfully updated!');
     }
 
-    public function destroy($id)
+    public function destroy(Metric $metric)
     {
         try {
-            Metric::findOrFail($id)->delete();
+            $metric->delete();
             return redirect()->back()->with('danger', 'Metric successfully deleted!');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('danger', 'Metric found in other Models!');
+            return redirect()->back()->with('danger', 'Metric not found!');
         }
     }
 

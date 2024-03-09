@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <a href="/users" class="mb-3">
+    <a href="{{ route('users') }}" class="mb-3">
         <h3>
             < Back</h3>
     </a>
@@ -11,10 +11,11 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <strong>Create User</strong>
+                <strong>New User</strong>
             </div>
             <div class="card-body card-block">
-                <form action="/users/create" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <form action="{{ route('users.create') }}" method="post" enctype="multipart/form-data"
+                    class="form-horizontal">
                     @csrf
                     <div class="row form-group">
                         <div class="col col-md-3">
@@ -54,7 +55,7 @@
                     </div>
                     <div class="row form-group">
                         <div class="offset-9 col-3">
-                            <button type="submit" class="btn btn-primary">Create User</button>
+                            <button type="submit" class="btn btn-primary">Create</button>
                         </div>
                     </div>
                 </form>

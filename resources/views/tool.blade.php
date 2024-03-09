@@ -11,14 +11,16 @@
                 <strong>Analytics Tool</strong>
             </div>
             <div class="card-body card-block">
-                <form action="/tool/result" method="post" enctype="multipart/form-data" class="form-horizontal" id="form">
+                <form action="{{ route('tool.result') }}" method="post" enctype="multipart/form-data"
+                    class="form-horizontal" id="form">
                     @csrf
                     <div class="form-group">
                         <label for="page_id" class=" form-control-label">Facebook Page ID *</label>
                         <select id="page_id" name="page_id" class="form-control" required>
                             <option value="">Facebook Page ID</option>
                             @foreach ($businesses as $business)
-                                <option value="{{$business->page_id}}" {{ old('page_id') == $business->page_id ? 'selected' : ''}}>{{$business->name}}</option>
+                            <option value="{{$business->page_id}}" {{ old('page_id')==$business->page_id ? 'selected' :
+                                ''}}>{{$business->name}}</option>
                             @endforeach
                         </select>
                     </div>

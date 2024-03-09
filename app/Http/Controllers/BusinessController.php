@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Business;
+use App\Models\Role;
 use Carbon\Carbon;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xls;
@@ -17,14 +18,15 @@ class BusinessController extends Controller
 
     public function index()
     {
-        $businesses = Business::select('id', 'name', 'page_id')->filter()->paginate(25);
+        $businesses = Business::select('id', 'name', 'page_id', 'role_id')->filter()->paginate(25);
 
         return view('businesses.index', compact('businesses'));
     }
 
     public function new()
     {
-        return view('businesses.new');
+        $roles = Role::select('id', 'name')->get();
+        return view('businesses.new', compact('roles'));
     }
 
     public function create(Request $request)
@@ -36,42 +38,33 @@ class BusinessController extends Controller
 
         Business::create($request->all());
 
-        return redirect('/businesses')->with('success', 'Business successfully created!');
+        return redirect()->route('businesses')->with('success', 'Business successfully created!');
     }
 
-    public function edit($id)
+    public function edit(Business $business)
     {
-        $business = Business::findOrFail($id);
+        $roles = Role::select('id', 'name')->get();
+        $data = compact('business', 'roles');
 
-        if (!$business) {
-            return redirect('/businesses')->with('danger', 'Business not found!');
-        }
-
-        return view('businesses.edit', compact('business'));
+        return view('businesses.edit', $data);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Business $business)
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'page_id' => ['required', 'string', 'max:255'],
         ]);
 
-        $business = Business::findOrFail($id);
-
-        if (!$business) {
-            return redirect('/businesses')->with('danger', 'Business not found!');
-        }
-
         $business->update($request->all());
 
-        return redirect('/businesses')->with('warning', 'Business successfully updated!');
+        return redirect()->route('businesses')->with('warning', 'Business successfully updated!');
     }
 
-    public function destroy($id)
+    public function destroy(Business $business)
     {
         try {
-            Business::findOrFail($id)->delete();
+            $business->delete();
             return redirect()->back()->with('danger', 'Business successfully deleted!');
         } catch (\Throwable $th) {
             return redirect()->back()->with('danger', 'Business found in other Models!');

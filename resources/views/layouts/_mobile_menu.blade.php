@@ -3,7 +3,7 @@
     <div class="header-mobile__bar">
         <div class="container-fluid">
             <div class="header-mobile-inner">
-                <a class="logo" href="index.html">
+                <a class="logo" href="{{ route('home') }}">
                     {{-- <img src="images/icon/logo.png" alt="CoolAdmin" /> --}}
                     <h2>Socialprise</h2>
                 </a>
@@ -19,7 +19,7 @@
         <div class="container-fluid">
             <ul class="navbar-mobile__list list-unstyled">
                 <li class="{{(Route::current()->uri == '/') ? 'active' : '' }}">
-                    <a href="/" class="d-flex align-items-center">
+                    <a href="{{ route('home') }}" class="d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="mx-2 bi bi-speedometer" viewBox="0 0 16 16">
                             <path
@@ -32,7 +32,7 @@
                 </li>
 
                 <li class="{{(Route::current()->uri == 'tool') ? 'active' : '' }}">
-                    <a href="/tool" class="d-flex align-items-center">
+                    <a href="{{ route('tool') }}" class="d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="mx-2 bi bi-tools" viewBox="0 0 16 16">
                             <path
@@ -42,7 +42,7 @@
                     </a>
                 </li>
 
-                {{-- <li class="(Route::current()->uri == 'portal') ? 'active' : ''  }}">
+                {{-- <li class="{{(Route::current()->uri == 'portal') ? 'active' : '' }}">
                     <a href="/portal" class="d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="mx-2 bi bi-gear-fill" viewBox="0 0 16 16">
@@ -54,7 +54,7 @@
                 </li> --}}
 
                 <li class="{{(Route::current()->uri == 'users') ? 'active' : '' }}">
-                    <a href="/users" class="d-flex align-items-center">
+                    <a href="{{ route('users') }}" class="d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="mx-2 bi bi-people-fill" viewBox="0 0 16 16">
                             <path
@@ -82,7 +82,7 @@
                 </li> --}}
 
                 <li class="{{(Route::current()->uri == 'businesses') ? 'active' : '' }}">
-                    <a href="/businesses" class="d-flex align-items-center">
+                    <a href="{{ route('businesses') }}" class="d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="mx-2 bi bi-buildings-fill" viewBox="0 0 16 16">
                             <path
@@ -93,13 +93,23 @@
                 </li>
 
                 <li class="{{(Route::current()->uri == 'metrics') ? 'active' : '' }}">
-                    <a href="/metrics" class="d-flex align-items-center">
+                    <a href="{{ route('metrics') }}" class="d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-braces mx-2" viewBox="0 0 16 16">
                             <path
                                 d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6zM13.886 7.9v.163c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456V7.332c-1.114 0-1.49-.362-1.49-1.456V4.352C13.51 2.759 12.75 2 11.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6" />
                         </svg>
                         Metrics
+                    </a>
+                </li>
+                <li class="{{(Route::current()->uri == 'metrics') ? 'active' : '' }}">
+                    <a href="{{ route('roles') }}" class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-key-fill mx-2" viewBox="0 0 16 16">
+                            <path
+                                d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                        </svg>
+                        Roles
                     </a>
                 </li>
             </ul>

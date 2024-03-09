@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <a href="/users" class="mb-3">
+    <a href="{{ route('users') }}" class="mb-3">
         <h3>
             < Back</h3>
     </a>
@@ -14,7 +14,7 @@
                 <strong>Update User</strong>
             </div>
             <div class="card-body card-block">
-                <form action="/users/{{$user->id}}/update" method="post" enctype="multipart/form-data"
+                <form action="{{ route('users.update', $user->id) }}" method="post" enctype="multipart/form-data"
                     class="form-horizontal">
                     @csrf
                     <div class="row form-group">
@@ -37,7 +37,7 @@
                     </div>
                     <div class="row form-group">
                         <div class="offset-9 col-3">
-                            <button type="submit" class="btn btn-primary">Update User</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </div>
                 </form>
@@ -49,8 +49,8 @@
                 <strong>Update User</strong>
             </div>
             <div class="card-body card-block">
-                <form action="/users/{{$user->id}}/change_password" method="post" enctype="multipart/form-data"
-                    class="form-horizontal">
+                <form action="{{ route('users.change_password', $user->id) }}" method="post"
+                    enctype="multipart/form-data" class="form-horizontal">
                     @csrf
                     <div class="row form-group">
                         <div class="col col-md-3">

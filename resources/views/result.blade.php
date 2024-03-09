@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
 <script src="{{ asset('assets/vendor/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/chartjs/Chart.bundle.min.js') }}"></script>
 
-
 <div class="container">
     <div class="d-flex justify-content-start">
-        <a href="/tool" class="mb-3 btn btn-secondary">Back</a>
+        <a href="{{ route('tool') }}" class="mb-3 btn btn-secondary">Back</a>
     </div>
 
     <h3 class="my-4">Result</h3>
@@ -155,15 +155,24 @@
 
     <h3 class="my-4">Metrics</h3>
     <div class="row">
-        @foreach ($metrics as $metric)
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-header">
-                    <strong>{{ $metric->name }}</strong>
-                </div>
-                <div class="card-body card-block">
-                    <p>{{ $metric->description }}</p>
-                </div>
+        <div class="card">
+            <div class="card-body card-block">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Metric Name</td>
+                            <td>Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($metrics as $metric)
+                        <tr>
+                            <td>{{ $metric->name }}</td>
+                            <td>{{ $metric->description }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
         @endforeach

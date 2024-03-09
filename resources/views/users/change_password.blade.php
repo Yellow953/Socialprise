@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <a href="/" class="mb-3">
+    <a href="{{ route('home') }}" class="mb-3">
         <h3>
             < Back</h3>
     </a>
@@ -15,11 +15,11 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <strong>Update User</strong>
+                <strong>Change Password</strong>
             </div>
             <div class="card-body card-block">
-                <form action="/users/{{$user->id}}/change_password" method="post" enctype="multipart/form-data"
-                    class="form-horizontal">
+                <form action="{{ route('users.change_password', $user->id) }}" method="post"
+                    enctype="multipart/form-data" class="form-horizontal">
                     @csrf
                     <div class="row form-group">
                         <div class="col col-md-3">

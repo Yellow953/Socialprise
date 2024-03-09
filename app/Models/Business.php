@@ -11,6 +11,11 @@ class Business extends Model
 
     protected $guarded = [];
 
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
     // Filter
     public function scopeFilter($q)
     {

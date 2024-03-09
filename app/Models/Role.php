@@ -5,15 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Metric extends Model
+class Role extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
-    public function roles()
+    public function business()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->hasOne(Business::class);
+    }
+
+    public function metrics()
+    {
+        return $this->belongsToMany(Metric::class);
     }
 
     // Filter
@@ -22,10 +27,6 @@ class Metric extends Model
         if (request('name')) {
             $name = request('name');
             $q->where('name', 'LIKE', "%{$name}%");
-        }
-        if (request('code')) {
-            $code = request('code');
-            $q->where('code', 'LIKE', "%{$code}%");
         }
         if (request('description')) {
             $description = request('description');

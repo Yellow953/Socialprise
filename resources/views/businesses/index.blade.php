@@ -21,10 +21,10 @@
                                     <div class="account-dropdown js-dropdown bg-light-secondary">
                                         <div class="account-dropdown__body">
                                             <div class="account-dropdown__item">
-                                                <a href="/businesses/new">New Business</a>
+                                                <a href="{{ route('businesses.new') }}">New Business</a>
                                             </div>
                                             <div class="account-dropdown__item">
-                                                <a href="/businesses/export">Export Businesses</a>
+                                                <a href="{{ route('businesses.export') }}">Export Businesses</a>
                                             </div>
                                         </div>
                                     </div>
@@ -40,7 +40,8 @@
                                     <div class="account-dropdown js-dropdown bg-light-secondary">
                                         <div class="account-dropdown__body">
                                             <div class="container">
-                                                <form action="/businesses" method="GET" enctype="multipart/form-data">
+                                                <form action="{{ route('businesses') }}" method="GET"
+                                                    enctype="multipart/form-data">
                                                     <div class="form-group">
                                                         <label>Name</label>
                                                         <input type="text" name="name" class="form-control"
@@ -54,7 +55,8 @@
                                                     </div>
 
                                                     <div class="actions d-flex justify-content-around">
-                                                        <a href="/businesses" class="btn btn-secondary">Reset</a>
+                                                        <a href="{{ route('businesses') }}"
+                                                            class="btn btn-secondary">Reset</a>
                                                         <button type="submit" class="btn btn-primary">Apply</button>
                                                     </div>
                                                 </form>
@@ -73,6 +75,7 @@
                         <tr>
                             <th>Name</th>
                             <th>Page ID</th>
+                            <th>Role</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -84,12 +87,15 @@
                                 <span class="block-email">{{$business->page_id}}</span>
                             </td>
                             <td>
+                                <span class="block-email">{{ucwords($business->role->name)}}</span>
+                            </td>
+                            <td>
                                 <div class="table-data-feature">
-                                    <a class="item bg-warning" href="/businesses/{{$business->id}}/edit"
+                                    <a class="item bg-warning" href="{{ route('businesses.edit', $business->id) }}"
                                         data-toggle="tooltip" data-placement="top" title="Edit">
                                         <i class="zmdi zmdi-edit text-dark"></i>
                                     </a>
-                                    <form method="GET" action="/businesses/{{$business->id}}/destroy">
+                                    <form method="GET" action="{{ route('businesses.destroy', $business->id) }}">
                                         @csrf
                                         <button class="item bg-danger show_confirm" type="submit" data-toggle="tooltip"
                                             data-placement="top" title="Delete">
@@ -102,11 +108,11 @@
                         <tr class="spacer"></tr>
                         @empty
                         <tr>
-                            <td colspan="3">No Businesses Found ...</td>
+                            <td colspan="4" class="text-center">No Businesses Found ...</td>
                         </tr>
                         @endforelse
                         <tr>
-                            <td colspan="3">{{$businesses->appends(['name' => request()->query('name'), 'page_id' =>
+                            <td colspan="4">{{$businesses->appends(['name' => request()->query('name'), 'page_id' =>
                                 request()->query('page_id')])->links()}}</td>
                         </tr>
                     </tbody>

@@ -1,4 +1,6 @@
-basic: facebook, insta, google
+insta, google
+
+instead of table graph individual graph
 
 grant access automatically
 
@@ -7,5 +9,3 @@ https://smashballoon.com/
 dashboard: report category (e-com / sales / informative / blog)
 
 best performing instagram post
-
-payment (Tap)

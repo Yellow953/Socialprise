@@ -21,10 +21,10 @@
                                     <div class="account-dropdown js-dropdown bg-light-secondary">
                                         <div class="account-dropdown__body">
                                             <div class="account-dropdown__item">
-                                                <a href="/users/new">New User</a>
+                                                <a href="{{ route('users.new') }}">New User</a>
                                             </div>
                                             <div class="account-dropdown__item">
-                                                <a href="/users/export">Export Users</a>
+                                                <a href="{{ route('users.export') }}">Export Users</a>
                                             </div>
                                         </div>
                                     </div>
@@ -40,7 +40,8 @@
                                     <div class="account-dropdown js-dropdown bg-light-secondary">
                                         <div class="account-dropdown__body">
                                             <div class="container">
-                                                <form action="/users" method="GET" enctype="multipart/form-data">
+                                                <form action="{{ route('users') }}" method="GET"
+                                                    enctype="multipart/form-data">
                                                     <div class="form-group">
                                                         <label>Name</label>
                                                         <input type="text" name="name" class="form-control"
@@ -54,7 +55,8 @@
                                                     </div>
 
                                                     <div class="actions d-flex justify-content-around">
-                                                        <a href="/users" class="btn btn-secondary">Reset</a>
+                                                        <a href="{{ route('users') }}"
+                                                            class="btn btn-secondary">Reset</a>
                                                         <button type="submit" class="btn btn-primary">Apply</button>
                                                     </div>
                                                 </form>
@@ -87,11 +89,11 @@
                             <td>{{$user->created_at}}</td>
                             <td>
                                 <div class="table-data-feature">
-                                    <a class="item bg-warning" href="/users/{{$user->id}}/edit" data-toggle="tooltip"
-                                        data-placement="top" title="Edit">
+                                    <a class="item bg-warning" href="{{ route('users.edit', $user->id) }}"
+                                        data-toggle="tooltip" data-placement="top" title="Edit">
                                         <i class="zmdi zmdi-edit text-dark"></i>
                                     </a>
-                                    <form method="GET" action="/users/{{$user->id}}/destroy">
+                                    <form method="GET" action="{{ route('users.destroy', $user->id) }}">
                                         @csrf
                                         <button class="item bg-danger show_confirm" type="submit" data-toggle="tooltip"
                                             data-placement="top" title="Delete">
@@ -104,7 +106,7 @@
                         <tr class="spacer"></tr>
                         @empty
                         <tr>
-                            <td colspan="4">No Users Found ...</td>
+                            <td colspan="4" class="text-center">No Users Found ...</td>
                         </tr>
                         @endforelse
                         <tr>
