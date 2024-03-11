@@ -10,7 +10,7 @@ class MetricSeeder extends Seeder
 {
     public function run(): void
     {
-        $csvFile = database_path('seeds/metrics.csv');
+        $csvFile = database_path('data/metrics.csv');
         $data = array_map('str_getcsv', file($csvFile));
         $header = array_shift($data);
 
