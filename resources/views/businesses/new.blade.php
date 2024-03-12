@@ -37,6 +37,16 @@
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3">
+                            <label for="instagram_business_account" class=" form-control-label">Instagram ID *</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="text" id="instagram_business_account" name="instagram_business_account"
+                                placeholder="Instagram ID ..." required value="{{old('instagram_business_account')}}"
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
                             <label for="page_id" class=" form-control-label">Role *</label>
                         </div>
                         <div class="col-12 col-md-9">

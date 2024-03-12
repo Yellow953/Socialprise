@@ -53,6 +53,12 @@
                                                             placeholder="Page ID..."
                                                             value="{{request()->query('page_id')}}">
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label>Instagram ID</label>
+                                                        <input type="text" name="instagram_business_account"
+                                                            class="form-control" placeholder="Page ID..."
+                                                            value="{{request()->query('instagram_business_account')}}">
+                                                    </div>
 
                                                     <div class="actions d-flex justify-content-around">
                                                         <a href="{{ route('businesses') }}"
@@ -75,6 +81,7 @@
                         <tr>
                             <th>Name</th>
                             <th>Page ID</th>
+                            <th>Instagram ID</th>
                             <th>Role</th>
                             <th></th>
                         </tr>
@@ -85,6 +92,9 @@
                             <td>{{ucwords($business->name)}}</td>
                             <td>
                                 <span class="block-email">{{$business->page_id}}</span>
+                            </td>
+                            <td>
+                                <span class="block-email">{{$business->instagram_business_account}}</span>
                             </td>
                             <td>
                                 <span class="block-email">{{ucwords($business->role->name)}}</span>

@@ -9,3 +9,13 @@ https://smashballoon.com/
 dashboard: report category (e-com / sales / informative / blog)
 
 best performing instagram post
+
+https://graph.facebook.com/v19.0/107599201926561?fields=instagram_business_account&access_token=EAAUUCEZBUZAC8BOZBZAxzJJd1pEtfUykQRKTmznfxkVVXDiIghgJH4t5klqgfpJ2o73pp3aNjqPBtzyQ846QvE1xmKORBhrTuzOgX2xZBDpXpGuSMVyfO4xLCssxGy9cjsxQZAbtOvQ1BwocFklDFZCcpZACREeguodH48Fm56rbWugdBmY3b8bfKkiSBq2R4v4wLTqFfP6CKxkT
+    
+    "instagram_business_account": {
+      "id": "17841452749614836"
+    },
+
+https://graph.facebook.com/v19.0/17841452749614836/media?access_token=EAAUUCEZBUZAC8BOZBZAxzJJd1pEtfUykQRKTmznfxkVVXDiIghgJH4t5klqgfpJ2o73pp3aNjqPBtzyQ846QvE1xmKORBhrTuzOgX2xZBDpXpGuSMVyfO4xLCssxGy9cjsxQZAbtOvQ1BwocFklDFZCcpZACREeguodH48Fm56rbWugdBmY3b8bfKkiSBq2R4v4wLTqFfP6CKxkT
+
+https://graph.facebook.com/v19.0/17841452749614836/insights?metric=follower_count,reach&period=day&access_token=EAAUUCEZBUZAC8BOZBZAxzJJd1pEtfUykQRKTmznfxkVVXDiIghgJH4t5klqgfpJ2o73pp3aNjqPBtzyQ846QvE1xmKORBhrTuzOgX2xZBDpXpGuSMVyfO4xLCssxGy9cjsxQZAbtOvQ1BwocFklDFZCcpZACREeguodH48Fm56rbWugdBmY3b8bfKkiSBq2R4v4wLTqFfP6CKxkT

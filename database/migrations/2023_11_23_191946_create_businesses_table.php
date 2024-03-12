@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('page_id')->nullable();
+            $table->string('instagram_business_account')->nullable();
             $table->text('access_token')->nullable();
             $table->bigInteger("role_id")->unsigned();
             $table->timestamps();

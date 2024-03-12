@@ -18,7 +18,7 @@ class BusinessController extends Controller
 
     public function index()
     {
-        $businesses = Business::select('id', 'name', 'page_id', 'role_id')->filter()->paginate(25);
+        $businesses = Business::select('id', 'name', 'page_id', 'instagram_business_account', 'role_id')->filter()->paginate(25);
 
         return view('businesses.index', compact('businesses'));
     }
@@ -73,7 +73,7 @@ class BusinessController extends Controller
 
     public function export()
     {
-        $data = Business::select('id', 'name', 'page_id', 'access_token', 'created_at')->get();
+        $data = Business::select('id', 'name', 'page_id', 'instagram_business_account', 'access_token', 'created_at')->get();
 
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
@@ -87,6 +87,7 @@ class BusinessController extends Controller
                 $d->id,
                 $d->name,
                 $d->page_id,
+                $d->instagram_business_account,
                 $d->access_token,
                 $d->created_at ?? Carbon::now(),
             ], null, 'A' . $rows);
@@ -94,7 +95,7 @@ class BusinessController extends Controller
             $rows++;
         }
 
-        $fileName = "Business.xls";
+        $fileName = "Businesses.xls";
         $writer = new Xls($spreadsheet);
         $writer->save($fileName);
 
