@@ -36,4 +36,12 @@ class Helper
             return "blue";
         }
     }
+
+    public static function get_platforms()
+    {
+        return [
+            'facebook',
+            'instagram',
+        ];
+    }
 }

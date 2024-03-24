@@ -43,6 +43,19 @@
                                 value="{{$metric->description}}" class="form-control">
                         </div>
                     </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="platform" class="form-control-label">Platform *</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <select id="platform" name="platform" class="form-control" required>
+                                @foreach (Helper::get_platforms() as $platform)
+                                <option value="{{ $platform }}" {{ $metric->platform==$platform ? 'selected' : '' }}>{{
+                                    ucwords($platform) }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="row form-group">
                         <div class="offset-9 col-3">

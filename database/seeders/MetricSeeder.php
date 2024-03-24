@@ -19,6 +19,7 @@ class MetricSeeder extends Seeder
                 'name' => $row[0],
                 'code' => $row[1],
                 'description' => $row[2],
+                'platform' => $row[3],
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

@@ -79,6 +79,7 @@
                         <tr>
                             <th>Name</th>
                             <th>Code</th>
+                            <th>Platform</th>
                             <th>Description</th>
                             <th></th>
                         </tr>
@@ -89,6 +90,9 @@
                             <td>{{ucwords($metric->name)}}</td>
                             <td>
                                 <span class="block-email">{{$metric->code}}</span>
+                            </td>
+                            <td>
+                                <span class="block-email">{{$metric->platform}}</span>
                             </td>
                             <td>
                                 <span class="block-email">{{$metric->description}}</span>
@@ -112,11 +116,11 @@
                         <tr class="spacer"></tr>
                         @empty
                         <tr>
-                            <td colspan="3" class="text-center">No Metrics Found ...</td>
+                            <td colspan="5" class="text-center">No Metrics Found ...</td>
                         </tr>
                         @endforelse
                         <tr>
-                            <td colspan="3">{{$metrics->appends(['name' => request()->query('name'), 'code' =>
+                            <td colspan="5">{{$metrics->appends(['name' => request()->query('name'), 'code' =>
                                 request()->query('code')])->links()}}</td>
                         </tr>
                     </tbody>

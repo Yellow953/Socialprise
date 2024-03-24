@@ -17,7 +17,7 @@ class MetricController extends Controller
 
     public function index()
     {
-        $metrics = Metric::select('id', 'name', 'code', 'description')->filter()->paginate(25);
+        $metrics = Metric::select('id', 'name', 'code', 'platform', 'description')->filter()->paginate(25);
 
         return view('metrics.index', compact('metrics'));
     }
@@ -32,6 +32,7 @@ class MetricController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'code' => ['required', 'string', 'max:255'],
+            'platform' => 'required',
         ]);
 
         Metric::create($request->all());
@@ -49,6 +50,7 @@ class MetricController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'code' => ['required', 'string', 'max:255'],
+            'platform' => 'required'
         ]);
 
         $metric->update($request->all());
@@ -68,12 +70,12 @@ class MetricController extends Controller
 
     public function export()
     {
-        $data = Metric::select('id', 'name', 'code', 'description', 'created_at')->get();
+        $data = Metric::select('id', 'name', 'code', 'platform', 'description', 'created_at')->get();
 
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->fromArray(['ID', 'Name', 'Code', 'Description', 'Created At'], null, 'A1');
+        $sheet->fromArray(['ID', 'Name', 'Code', 'Platform', 'Description', 'Created At'], null, 'A1');
 
         $rows = 2;
 
@@ -82,6 +84,7 @@ class MetricController extends Controller
                 $d->id,
                 $d->name,
                 $d->code,
+                $d->platform,
                 $d->description,
                 $d->created_at ?? Carbon::now(),
             ], null, 'A' . $rows);

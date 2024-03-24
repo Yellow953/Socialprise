@@ -118,12 +118,13 @@
                         <tr class="spacer"></tr>
                         @empty
                         <tr>
-                            <td colspan="4" class="text-center">No Businesses Found ...</td>
+                            <td colspan="5" class="text-center">No Businesses Found ...</td>
                         </tr>
                         @endforelse
                         <tr>
-                            <td colspan="4">{{$businesses->appends(['name' => request()->query('name'), 'page_id' =>
-                                request()->query('page_id')])->links()}}</td>
+                            <td colspan="5">{{$businesses->appends(['name' => request()->query('name'), 'page_id' =>
+                                request()->query('page_id'), 'instagram_business_account' =>
+                                request()->query('instagram_business_account')])->links()}}</td>
                         </tr>
                     </tbody>
                 </table>

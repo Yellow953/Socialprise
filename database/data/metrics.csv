@@ -1,21 +1,30 @@
-Name,Code,Description
-Page CTA Clicks,page_cta_clicks,The number of clicks on call-to-action (CTA) buttons on your Facebook Page.
-Page Engagement,page_engagement,The total number of engagements on your Facebook Page including clicks likes comments and shares.
-Page Impressions,page_impressions,The total number of times content from your Page is displayed including both organic and paid impressions.
-Page Posts,page_posts,The total number of posts made on your Facebook Page.
-Page Post Engagement,page_post_engagement,The total number of engagements on your individual Page posts including likes comments and shares.
-Negative Feedback Types,negative_feedback_types,The different types of negative feedback received on your Page such as hide post hide all posts report as spam etc.
-Page Post Impressions,page_post_impressions,The total number of times your individual Page posts are displayed including both organic and paid impressions.
-Page Reactions,page_reactions,The total number of reactions (like love wow haha sad angry) on your Facebook Page.
-Page Like Sources,page_like_sources,The sources from which people liked your Page including from Page suggestions ads and others.
-Page Unlike Sources,page_unlike_sources,The sources from which people unliked your Page.
-Page Video Views,page_video_views,The total number of views on videos posted on your Facebook Page.
-Page Views,page_views,The total number of times your Facebook Page has been viewed.
-Page Video Posts,page_video_posts,The total number of video posts made on your Facebook Page.
-Stories,stories,The total number of stories created by your Page.
-Page Story Types,page_story_types,The different types of stories created by your Page, such as photos videos and events.
-Video Ad Breaks,video_ad_breaks,The performance metrics related to video ad breaks on your Page including views and engagement.
-Page Fans,page_fans,The total number of people who have liked your Facebook Page.
-Page Follows,page_follows,The total number of people who have followed your Facebook Page.
-Page Views (Unique),page_views_unique,The total number of unique individuals who have viewed your Facebook Page.
-Page Negative Feedback,page_negative_feedback,The total number of times people have given negative feedback to your Facebook Page including hide post hide all posts report as spam etc.
+Name,Code,Description, Platform
+Page CTA Clicks,page_cta_clicks,The number of clicks on call-to-action (CTA) buttons on your Facebook Page.,facebook,facebook
+Page Engagement,page_engagement,The total number of engagements on your Facebook Page including clicks likes comments and shares.,facebook,facebook
+Page Impressions,page_impressions,The total number of times content from your Page is displayed including both organic and paid impressions.,facebook,facebook
+Page Posts,page_posts,The total number of posts made on your Facebook Page.,facebook
+Page Post Engagement,page_post_engagement,The total number of engagements on your individual Page posts including likes comments and shares.,facebook
+Negative Feedback Types,negative_feedback_types,The different types of negative feedback received on your Page such as hide post hide all posts report as spam etc.,facebook
+Page Post Impressions,page_post_impressions,The total number of times your individual Page posts are displayed including both organic and paid impressions.,facebook
+Page Reactions,page_reactions,The total number of reactions (like love wow haha sad angry) on your Facebook Page.,facebook
+Page Like Sources,page_like_sources,The sources from which people liked your Page including from Page suggestions ads and others.,facebook
+Page Unlike Sources,page_unlike_sources,The sources from which people unliked your Page.,facebook
+Page Video Views,page_video_views,The total number of views on videos posted on your Facebook Page.,facebook
+Page Views,page_views,The total number of times your Facebook Page has been viewed.,facebook
+Page Video Posts,page_video_posts,The total number of video posts made on your Facebook Page.,facebook
+Stories,stories,The total number of stories created by your Page.,facebook
+Page Story Types,page_story_types,The different types of stories created by your Page, such as photos videos and events.,facebook
+Video Ad Breaks,video_ad_breaks,The performance metrics related to video ad breaks on your Page including views and engagement.,facebook
+Page Fans,page_fans,The total number of people who have liked your Facebook Page.,facebook
+Page Follows,page_follows,The total number of people who have followed your Facebook Page.,facebook
+Page Views (Unique),page_views_unique,The total number of unique individuals who have viewed your Facebook Page.,facebook
+Page Negative Feedback,page_negative_feedback,The total number of times people have given negative feedback to your Facebook Page including hide post hide all posts report as spam etc.,facebook
+Audience City,audience_city,Cities of followers for whom we have demographic data.,instagram
+Audience Country,audience_country,Countries of followers for whom we have demographic data.,instagram
+Audience Gender Age,audience_gender_age,The gender and age distribution of followers for whom we have demographic data. Possible values: M (male) F (female) U (Uncategorised).,instagram
+Follower Count,follower_count,Total number of new followers each day within the specified range. Returns a maximum of 30 days worth of data. Not available on IG Users with fewer than 100 followers.,instagram
+Impressions,impressions,Total number of times the IG User's IG Media have been viewed. Includes ad activity generated through the API Facebook ads interfaces and the Promote feature. Does not include profile views.,instagram
+Online Followers,online_followers,Total number of the IG User's followers who were online during the specified range. Not available on IG Users with fewer than 100 followers.,instagram
+Profile Views,profile_views,Total number of users who have viewed the IG User's profile within the specified period.,instagram
+Reach,reach,Total number of unique users who have viewed at least one of the IG User's IG Media. Repeat views and views across different IG Media owned by the IG User by the same user are only counted as a single view. Includes ad activity generated through the API Facebook ads interfaces and the Promote feature.,instagram
+website_clicks,website_clicks,Total number of taps on the website link in the IG User's profile.,instagram

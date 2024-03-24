@@ -92,7 +92,7 @@
                         Metrics
                     </a>
                 </li>
-                <li class="{{(Route::current()->uri == 'metrics') ? 'active' : '' }}">
+                <li class="{{(Route::current()->uri == 'roles') ? 'active' : '' }}">
                     <a href="{{ route('roles') }}" class="d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-key-fill mx-2" viewBox="0 0 16 16">
