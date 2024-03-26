@@ -25,12 +25,24 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="metrics" class=" form-control-label">Metrics *</label>
+                        <label for="facebook_metrics" class=" form-control-label">Facebook Metrics</label>
                         <div class="row mx-3">
-                            @foreach ($metrics as $metric)
+                            @foreach ($facebook_metrics as $metric)
                             <div class="form-check col-4">
                                 <input type="checkbox" class="form-check-input" id="{{ $metric->code }}"
-                                    name="metrics[]" value="{{ $metric->code }}">
+                                    name="facebook_metrics[]" value="{{ $metric->code }}">
+                                <label class="form-check-label" for="{{ $metric->code }}">{{ $metric->name }}</label>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="instagram_metrics" class=" form-control-label">Instagram Metrics</label>
+                        <div class="row mx-3">
+                            @foreach ($instagram_metrics as $metric)
+                            <div class="form-check col-4">
+                                <input type="checkbox" class="form-check-input" id="{{ $metric->code }}"
+                                    name="instagram_metrics[]" value="{{ $metric->code }}">
                                 <label class="form-check-label" for="{{ $metric->code }}">{{ $metric->name }}</label>
                             </div>
                             @endforeach

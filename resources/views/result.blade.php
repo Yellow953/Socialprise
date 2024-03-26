@@ -5,6 +5,10 @@
 <script src="{{ asset('assets/vendor/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/chartjs/Chart.bundle.min.js') }}"></script>
 
+@php
+$counter = 0;
+@endphp
+
 <div class="container">
     <div class="d-flex justify-content-start">
         <a href="{{ route('tool') }}" class="mb-3 btn btn-secondary">Back</a>
@@ -14,7 +18,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body card-block">
-                @foreach ($facebook_data as $counter => $item)
+                @foreach ($facebook_data as $item)
                 <h3>{{ ucwords(str_replace('_', ' ', $item['name'])) }} <small>({{ $item['period'] }})</small> </h3>
                 <div class="d-flex justify-content-around align-item-center mt-3">
                     <div>
@@ -121,6 +125,9 @@
                     })(jQuery);
                 </script>
 
+                @php
+                $counter++;
+                @endphp
                 <br><br>
                 @endforeach
             </div>
@@ -131,7 +138,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body card-block">
-                @foreach ($instagram_data as $counter => $item)
+                @foreach ($instagram_data as $item)
                 <h3>{{ ucwords(str_replace('_', ' ', $item['name'])) }} <small>({{ $item['period'] }})</small> </h3>
                 <div class="d-flex justify-content-around align-item-center mt-3">
                     <div>
@@ -237,7 +244,9 @@
                         }
                     })(jQuery);
                 </script>
-
+                @php
+                $counter++;
+                @endphp
                 <br><br>
                 @endforeach
             </div>

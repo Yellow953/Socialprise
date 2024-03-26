@@ -24,18 +24,19 @@ class HomeController extends Controller
 
     public function tool()
     {
-        $metrics = Metric::select('name', 'code')->get();
+        $facebook_metrics = Metric::select('name', 'code')->where('platform', 'facebook')->get();
+        $instagram_metrics = Metric::select('name', 'code')->where('platform', 'instagram')->get();
         $businesses = Business::select('name', 'page_id')->get();
 
-        return view('tool', compact('metrics', 'businesses'));
+        return view('tool', compact('facebook_metrics', 'instagram_metrics', 'businesses'));
     }
 
     public function result(Request $request)
     {
         $business = Business::where('page_id', $request->page_id)->firstOrFail();
         $metrics = Metric::select('name', 'description')->get();
-        $facebook_data = $this->get_facebook_analytics($business, $request->metrics)["data"];
-        $instagram_data = $this->get_instagram_analytics($business, $request->metrics)["data"];
+        $facebook_data = $this->get_facebook_analytics($business, $request->facebook_metrics)["data"];
+        $instagram_data = $this->get_instagram_analytics($business, $request->instagram_metrics)["data"];
 
         foreach ($facebook_data as $item) {
             Result::create([
@@ -104,8 +105,10 @@ class HomeController extends Controller
         // $gpt_response = $this->chatgpt($long_text);
         $gpt_response = $long_text;
 
+        $data = compact('facebook_data', 'instagram_data', 'gpt_response', 'labels_facebook', 'values_facebook', 'labels_instagram', 'values_instagram', 'metrics');
+
         // return $facebook_data;
-        return view('result', compact('facebook_data', 'instagram_data', 'gpt_response', 'labels_facebook', 'values_facebook', 'labels_instagram', 'values_instagram', 'metrics'));
+        return view('result', $data);
     }
 
     public function analyse(Request $request)
@@ -131,7 +134,7 @@ class HomeController extends Controller
 
     private function get_facebook_analytics($business, $metrics)
     {
-        $graphApiUrl = 'https://graph.facebook.com/v18.0/' . $business->page_id . '/insights?metric=';
+        $graphApiUrl = 'https://graph.facebook.com/v19.0/' . $business->page_id . '/insights?metric=';
 
         $metricArray = [];
 
